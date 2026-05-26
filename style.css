@@ -252,3 +252,24 @@ button:hover {
 .now-playing span {
   font-weight: 700;
 }
+
+@media (max-width: 600px) {
+  body {
+    display: block;
+    padding: 18px 14px;
+  }
+
+  .now-playing {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto 14px;
+    text-align: center;
+  }
+
+  .app {
+    margin: 0 auto;
+  }
+}
