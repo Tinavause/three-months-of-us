@@ -38,7 +38,7 @@ function startJourney() {
 
   if (music) {
     music.volume = 0.25;
-    music.play();
+    music.play().catch(err => console.log(err));
   }
 
   nextCard();
