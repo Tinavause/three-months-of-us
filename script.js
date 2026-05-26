@@ -38,7 +38,9 @@ function startJourney() {
 
   if (music) {
     music.volume = 0.25;
-    music.play().catch(err => console.log(err));
+    music.play().catch(error => {
+      console.log("Audio did not play:", error);
+    });
   }
 
   nextCard();
