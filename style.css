@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, #8b1e2d 0%, transparent 35%),
+    linear-gradient(135deg, #19070b, #3a0b13, #741827);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px;
+  overflow-y: auto;
+  font-family: 'Inter', sans-serif;
+}
+
+.app {
+  width: min(100%, 430px);
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+}
+
+.card {
+  display: none;
+  background: rgba(255, 250, 250, 0.96);
+  border-radius: 26px;
+  padding: 22px;
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  animation: fadeIn 0.45s ease;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+.card.active {
+  display: block;
+}
+
+.top-label,
+.counter {
+  color: #8b1e2d;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+h1 {
+  color: #3a0b13;
+  font-size: clamp(28px, 8vw, 36px);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  line-height: 1.05;
+  margin: 12px 0;
+}
+
+h2 {
+  color: #7a1b29;
+  font-size: clamp(16px, 4.5vw, 18px);
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+
+p {
+  color: #3f2a2e;
+  font-size: 15px;
+  line-height: 1.55;
+  font-weight: 500;
+}
+
+ul {
+  text-align: left;
+  color: #3f2a2e;
+  font-size: 15.5px;
+  line-height: 1.9;
+  padding-left: 22px;
+  font-weight: 500;
+}
+
+button {
+  margin-top: 18px;
+  border: none;
+  background: #7a1b29;
+  color: white;
+  padding: 13px 24px;
+  border-radius: 999px;
+  font-size: 14.5px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 10px 24px rgba(122, 27, 41, 0.28);
+  transition: all 0.25s ease;
+}
+
+button:hover {
+  background: #9f2638;
+  transform: translateY(-2px);
+}
+
+.back {
+  background: #fff4f5;
+  color: #7a1b29;
+  border: 1px solid #e3b4bc;
+  box-shadow: none;
+  margin-left: 8px;
+}
+
+.hidden {
+  display: none;
+}
+
+#surprise {
+  margin-top: 24px;
+  background: #fff3f4;
+  border-radius: 22px;
+  padding: 20px;
+  border: 1px solid #e7b7bd;
+}
+
+.hearts::before,
+.hearts::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hearts::before {
+  background:
+    radial-gradient(circle at 8% 12%, rgba(255, 235, 240, 0.55) 0 2px, transparent 3px),
+    radial-gradient(circle at 28% 22%, rgba(255, 235, 240, 0.35) 0 2px, transparent 3px),
+    radial-gradient(circle at 72% 14%, rgba(255, 235, 240, 0.48) 0 2px, transparent 3px),
+    radial-gradient(circle at 92% 26%, rgba(255, 235, 240, 0.38) 0 2px, transparent 3px),
+
+    radial-gradient(circle at 14% 52%, rgba(255, 235, 240, 0.42) 0 2px, transparent 3px),
+    radial-gradient(circle at 38% 46%, rgba(255, 235, 240, 0.28) 0 2px, transparent 3px),
+    radial-gradient(circle at 66% 54%, rgba(255, 235, 240, 0.36) 0 2px, transparent 3px),
+    radial-gradient(circle at 88% 48%, rgba(255, 235, 240, 0.50) 0 2px, transparent 3px),
+
+    radial-gradient(circle at 10% 84%, rgba(255, 235, 240, 0.40) 0 2px, transparent 3px),
+    radial-gradient(circle at 32% 76%, rgba(255, 235, 240, 0.32) 0 2px, transparent 3px),
+    radial-gradient(circle at 74% 82%, rgba(255, 235, 240, 0.46) 0 2px, transparent 3px),
+    radial-gradient(circle at 94% 74%, rgba(255, 235, 240, 0.34) 0 2px, transparent 3px);
+  animation: softGlow 5s ease-in-out infinite alternate;
+}
+
+.hearts::after {
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='360' viewBox='0 0 360 360'%3E%3Ctext x='24' y='40' font-size='22' fill='rgba(255,235,240,0.42)'%3E%E2%9C%A6%3C/text%3E%3Ctext x='270' y='55' font-size='20' fill='rgba(255,235,240,0.34)'%3E%E2%99%A1%3C/text%3E%3Ctext x='145' y='95' font-size='18' fill='rgba(255,235,240,0.30)'%3E%E2%9C%A7%3C/text%3E%3Ctext x='315' y='145' font-size='19' fill='rgba(255,235,240,0.38)'%3E%E2%98%BE%3C/text%3E%3Ctext x='55' y='175' font-size='19' fill='rgba(255,235,240,0.32)'%3E%E2%99%A1%3C/text%3E%3Ctext x='205' y='215' font-size='21' fill='rgba(255,235,240,0.40)'%3E%E2%9C%A6%3C/text%3E%3Ctext x='305' y='285' font-size='18' fill='rgba(255,235,240,0.30)'%3E%E2%9C%A7%3C/text%3E%3Ctext x='90' y='315' font-size='20' fill='rgba(255,235,240,0.36)'%3E%E2%98%BE%3C/text%3E%3C/svg%3E");
+  background-size: 360px 360px;
+  animation: softDrift 9s ease-in-out infinite alternate;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.photo-frame {
+  display: inline-block;
+  background: white;
+  border-radius: 22px;
+  padding: 8px;
+  margin: 12px auto;
+  box-shadow: 0 10px 22px rgba(58, 11, 19, 0.18);
+  max-width: 100%;
+}
+
+.love-photo {
+  display: block;
+  max-width: 100%;
+  max-height: 380px;
+  width: auto;
+  height: auto;
+  border-radius: 16px;
+}
+
+.love-list {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 14px;
+  text-align: left;
+}
+
+.love-list li {
+  position: relative;
+  padding-left: 34px;
+  margin-bottom: 20px;
+  color: #3f2a2e;
+  font-size: 15.5px;
+  line-height: 1.55;
+  font-weight: 500;
+}
+
+.love-list li::before {
+  content: "❤";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  color: #8b1e2d;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+@keyframes softGlow {
+  from {
+    opacity: 0.45;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
+@keyframes softDrift {
+  from {
+    transform: translateY(0);
+    opacity: 0.32;
+  }
+  to {
+    transform: translateY(-10px);
+    opacity: 0.58;
+  }
+}
