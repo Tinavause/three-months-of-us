@@ -232,3 +232,23 @@ button:hover {
     opacity: 0.58;
   }
 }
+
+.now-playing {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  background: rgba(255, 250, 250, 0.14);
+  backdrop-filter: blur(8px);
+  color: rgba(255, 235, 240, 0.92);
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 235, 240, 0.18);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  z-index: 10;
+}
+
+.now-playing span {
+  font-weight: 700;
+}
